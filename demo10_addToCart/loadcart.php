@@ -15,6 +15,7 @@ if (!$conn) {
    die("Connection failed: " . mysqli_connect_error());
 }
 ?>
+
 <?php
 $data ='
          <table class="table table-hover">
@@ -55,7 +56,7 @@ foreach($_SESSION['cart'] as $id=> $quantity) {
                              <td id='price$id'> $price</td>
                              <td><input type='number' onkeypress='return event.charCode >= 48 && event.charCode <= 57' class ='form-control' value = '$quantity' id='quantity$id'  min='1' size='5' onchange='changeNoItems($id)'></td>
                              <td class='sub-total' id='subTotal$id'>$subTotal</td>
-                             <td><button class='btn btn-danger' >Remove</button></td>
+                             <td><button class='btn btn-danger' onclick='deleteItem($id)' >Remove</button></td>
                          </tr>";
                    }
                }

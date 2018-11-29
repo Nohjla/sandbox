@@ -11,8 +11,6 @@ function loadCart(){
 $(document).ready(function(){
 
 	loadCart();
-
-
 });
 
 
@@ -42,3 +40,22 @@ function changeNoItems(id){
 
 
  }
+
+ function deleteItem(id){
+
+ 		let ans = confirm("are you sure");
+ 		if(ans){
+		 	$.ajax({
+				url:"remove_item.php",
+				method:"POST",
+				data:{itemId:id},
+				dataType:"text",
+				success:function(data){
+					$('a[href="cart.php"]').html(data);
+					console.log(data);
+					loadCart();
+				}
+			})	
+ 		}
+ }
+
