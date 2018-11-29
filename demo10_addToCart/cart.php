@@ -1,14 +1,14 @@
-<?php
-	session_start();
-	$servername = "localhost";
-	$username = "root";
-	$pw = "";
-	$dbname = "demoStoreNew";
-	// echo $_SESSION["item_count"];
-	foreach ($_SESSION["cart"] as $key => $value) {
-		echo "<span>$key</span><input id='' type='number' value=$value><br>";
-	}	
-?>
-<script>
+<?php session_start(); ?>
+
+
+<h2>My Shopping Cart</h2><hr>
+
+<div id="loadcart">
 	
-</script>
+
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="script.js"></script>
