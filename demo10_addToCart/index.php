@@ -25,7 +25,7 @@ $conn = mysqli_connect($servername, $username, $pw, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$sql = "SELECT * FROM items limit 2 "; //make sure table name matches yours
+$sql = "SELECT * FROM items"; //make sure table name matches yours
 $result = mysqli_query($conn, $sql);
 
 if(mysqli_num_rows($result) > 0){

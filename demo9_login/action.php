@@ -23,7 +23,7 @@
 		die("Connection failed:".mysqli_error($conn));
 	}
 
-	$sql = "SELECT * FROM tbl_users WHERE emailadd = '$email' && psword = '$password'";
+	$sql = "SELECT * FROM tbl_users WHERE email = '$email' && psword = '$password'";
 	$result = mysqli_query($conn, $sql);
 
 	if (mysqli_num_rows($result) > 0) {
@@ -32,9 +32,7 @@
 			// echo "<br>";
 			// echo $row['fname'];
 
-			$_SESSION['email'] = $row['emailadd'];
-			$_SESSION['lastname'] = $row['lname'];
-			$_SESSION['firstname'] = $row['fname'];
+			$_SESSION['email'] = $row['email'];
 		}
 		header("Location: home.php");
 	}

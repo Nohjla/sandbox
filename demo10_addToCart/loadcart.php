@@ -17,6 +17,7 @@ if (!$conn) {
 ?>
 
 <?php
+
 $data ='
          <table class="table table-hover">
            <thead>
@@ -64,7 +65,11 @@ foreach($_SESSION['cart'] as $id=> $quantity) {
 
 $data .="</tbody></table>
              <hr>
-             <h3 align='right'>Total: &#x20B1; <span id='grandTotal'>$grand_total </span><br><button class='btn btn-success'>Check Out</button></h3>
+             <h3 align='right'>Total: &#x20B1; <span id='grandTotal'>$grand_total </span><br>
+             <form method='post' action='checkout.php'>
+             <button class='btn btn-success' type='submit'>Check Out</button>
+             </form>
+             </h3>
              <hr>";
 echo $data;
 ?>

@@ -16,10 +16,15 @@ $(document).ready(function(){
 
 function changeNoItems(id){
 
+
 	let items =	$("#quantity" + id).val();
 	let price = $("#price" + id).text();
 	let newPrice = items * price;
 	let grandtotal = items * newPrice;
+
+	$.post("updateCart.php",{id:id,quantity:items},function(data){
+		console.log(data);
+	})
 
 	$("#subTotal" + id).text(newPrice);
 
@@ -57,5 +62,12 @@ function changeNoItems(id){
 				}
 			})	
  		}
+ }
+
+ function checkOut(email)
+ 	{
+ 		$.post("checkout.php",{email:email},function(data){
+
+ 		})
  }
 
